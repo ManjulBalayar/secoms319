@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Best Dictionaries to Buy</title>
+  <!-- Load Bootstrap CSS -->
+  <link rel="stylesheet" type="text/css" href="navstyle.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+  <header>
+		<nav>
+			<ul>
+				<li><a href="index.html">Dictionary</a></li>
+				<li><a href="bestdictionary.html">Best Dictionaries</a></li>
+				<li><a href="website-info.html">Website Info</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+			</ul>
+		</nav>
+	</header>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="card">
+          <img class="card-img-top" src="dictionary1.jpg">
+          <div class="card-body">
+            <h5 class="card-title" id="product1-name"></h5>
+            <p class="card-text" id="product1-description"></p>
+            <a href="https://www.amazon.com/Merriam-Webster-Dictionary-Trade-Paperback-Copyright/dp/0877796688/ref=zg_bs_684286011_sccl_1/142-7668447-4771751?psc=1" target="_blank"><p class="card-text" id="product1-price"></p></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card">
+          <img class="card-img-top" src="dictionary2.jpg">
+          <div class="card-body">
+            <h5 class="card-title" id="product2-name"></h5>
+            <p class="card-text" id="product2-description"></p>
+            <a href="https://www.amazon.com/Paperback-Oxford-English-Dictionary-Dictionaries/dp/0199640947/ref=zg_bs_684286011_sccl_6/142-7668447-4771751?psc=1" target="_blank"><p class="card-text" id="product2-price"></p></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card">
+          <img class="card-img-top" src="dictionary3.jpg">
+          <div class="card-body">
+            <h5 class="card-title" id="product3-name"></h5>
+            <p class="card-text" id="product3-description"></p>
+            <a href="https://www.amazon.com/Blacks-Dictionary-BLACKS-DICTIONARY-STANDARD/dp/1539229750/ref=zg_bs_684286011_sccl_4/142-7668447-4771751?psc=1" target="_blank"><p class="card-text" id="product3-price"></p></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Load jQuery and Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+  <script>
+    // Fetch the JSON data
+    fetch('data.json')
+      .then(response => response.json())
+      .then(data => {
+        // Get the products array from the JSON data
+        const products = data.products;
+        
+        // Update the HTML with the product data
+        document.getElementById('product1-name').textContent = products[0].productid;
+        document.getElementById('product1-description').textContent = products[0].description;
+        document.getElementById('product1-price').textContent = products[0].price;
+        
+        document.getElementById('product2-name').textContent = products[1].productid;
+        document.getElementById('product2-description').textContent = products[1].description;
+        document.getElementById('product2-price').textContent = products[1].price;
+        
+        document.getElementById('product3-name').textContent = products[2].productid;
+        document.getElementById('product3-description').textContent = products[2].description;
+        document.getElementById('product3-price').textContent = products[2].price;
+      })
+      .catch(error => console.error(error));
+  </script>
+</body>
+</html>

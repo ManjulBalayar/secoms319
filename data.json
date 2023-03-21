@@ -1,0 +1,35 @@
+{
+	"products": [
+	  {
+		"productid": "The Merriam-Webster Dictionary, Trade Paperback, Newest Edition",
+		"description": "This dictionary features more than 75,000 clear and precise definitions, including new words from a variety of fields. It consists of Pronunciations, word origins, synonym lists, and over 8,000 usage examples to aid understanding.",
+		"price": "$12.99"
+	  },
+	  {
+		"productid": "Paperback Oxford English Dictionary 7th Edition",
+		"description": "This fully updated edition offers over 120,000 words, phrases, and definitions. It covers all the words you need for everyday use, carefully selected from the evidence of the Oxford English Corpus, a databank of 21st century English, containing over 2 billion words.The Factfinder centre section gives quick-reference entries on topics including famous people, countries, and science.",
+		"price": "$12.95"
+	  },
+	  {
+		"productid": "Black’s Law Dictionary, 11th Edition (BLACK'S LAW DICTIONARY (STANDARD EDITION))",
+		"description": "The greatly expanded 11th edition, with new material on every page, is at once the most practical, comprehensive, scholarly, and authoritative law dictionary ever published. With clarity and rigor, it defines more than 55,000 law-related words and phrases, recording their historical and present-day nuances. This edition introduces 3,500 new terms, including accountability, anticipatory self-defense, cyber force, Islamic law, Jewish law, legal moralism, legal reasoning, moral equality, peacekeeping, remotely piloted warfare, right to rebel, and umbrella clause.",
+		"price": "$110.24"
+	  },
+	  {
+		"productid": "Step 1",
+		"description": "Type your word on the search bar.",
+		"price": "N/A"
+	  },
+	  {
+		"productid": "Step 2",
+		"description": "Press enter for the meaning and examples. You can scroll up or down to see more of the description and also click on the sound button for the pronunciation.",
+		"price": "N/A"
+	  },
+	  {
+		"productid": "Step 3",
+		"description": "Clear the word with the 'x' button to type in a new word.",
+		"price": "N/A"
+	  }
+	]
+  }
+  

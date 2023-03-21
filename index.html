@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dictionary</title>
+	<link rel="stylesheet" type="text/css" href="navstyle.css">
+    <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <style>
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* min-height: 100vh; */
+            background: #fff;
+        }
+        .wrapper header {
+            font-family: garamond;
+            font-size: 40px;
+            font-weight: 500;
+            text-align: center;
+        }
+        .wrapper .search{
+            position: relative;
+            margin: 35px 0 18px;
+        }
+        .search input{
+            margin: auto;
+            height: 53px;
+            width: 70%;
+            outline: none;
+            font-size: 16px;
+            border-radius: 5px;
+            padding: 0 42px;
+            border: 1px solid #999;
+        }
+        .search input:focus{
+            padding: 0 41px;
+            border: 3px solid black;
+        }
+        .search input::placeholder{
+            color: #B8B8B8;
+        }
+        .search :where(i, span){
+            position: absolute;
+            top: 50%;
+            color: #999;
+            transform: translateY(-50%);
+        }
+        .search i{
+            left: 18px;
+            pointer-events: none;
+            font-size: 16px;
+        }
+        .search input:focus ~ i{
+            color: black;
+        }
+        .search span{
+            right: 15px;
+            cursor: pointer;
+            font-size: 18px;
+            display: none;
+        }
+        .search input:valid ~ span{
+            display: block;
+        }
+        .wrapper .info-text{
+            font-size: 13px;
+            color: #9A9A9A;
+            margin: -3px 0 -10px;
+        }
+        .wrapper.active .info-text{
+            display: none;
+        }
+        .info-text span{
+            font-weight: 500;
+        }
+        .wrapper ul{
+            height: 0;
+            opacity: 0;
+            padding-right: 1px;
+            overflow-y: hidden;
+            transition: all 0.2s ease;
+        }
+        .wrapper.active ul{
+            opacity: 1;
+            height: 303px;
+        }
+        .wrapper ul li{
+            display: flex;
+            list-style: none;
+            margin-bottom: 14px;
+            align-items: center;
+            padding-bottom: 17px;
+            border-bottom: 1px solid #D9D9D9;
+            justify-content: space-between;
+        }
+        ul li:last-child{
+            margin-bottom: 0;
+            border-bottom: 0;
+            padding-bottom: 0;
+        }
+        ul .word p{
+            font-size: 22px;
+            font-weight: 500;
+        }
+        ul .word span{
+            font-size: 12px;
+            color: #989898;
+        }
+        ul .word i{
+            color: #999;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        ul .content{
+            max-height: 215px;
+            overflow-y: auto;
+        }
+        ul .content::-webkit-scrollbar{
+            width: 0px;
+        }
+        .content li .details{
+            padding-left: 10px;
+            border-radius: 4px 0 0 4px;
+            border-left: 3px solid black;
+        }
+        .content li p{
+            font-size: 17px;
+            font-weight: 500;
+        }
+        .content li span{
+            font-size: 15px;
+            color: #7E7E7E;
+        }
+        .content .synonyms .list{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .content .synonyms span{
+            cursor: pointer;
+            margin-right: 5px;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="index.html">Dictionary</a></li>
+				<li><a href="bestdictionary.html">Best Dictionaries</a></li>
+				<li><a href="website-info.html">Website Info</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<div class="wrapper">
+            <header>Balayar Dictionary</header>
+            <div class="search">
+              <input type="text" placeholder="Search a word" required spellcheck="false">
+              <i class="fas fa-search"></i>
+              <span class="material-icons">close</span>
+            </div>
+            <p class="info-text">Type any word for their meaning, example, synonyms, etc.</p>
+            <ul>
+              <li class="word">
+                <div class="details">
+                  <p>__</p>
+                  <span>_ _</span>
+                </div>
+                <i class="fas fa-volume-up"></i>
+              </li>
+              <div class="content">
+                <li class="meaning">
+                  <div class="details">
+                    <p>Meaning</p>
+                    <span>___</span>
+                  </div>
+                </li>
+                <li class="example">
+                  <div class="details">
+                    <p>Example</p>
+                    <span>___</span>
+                  </div>
+                </li>
+                <li class="synonyms">
+                  <div class="details">
+                    <p>Synonyms</p>
+                    <div class="list"></div>
+                  </div>
+                </li>
+              </div>
+            </ul>
+          </div>
+          <script src="index.js"></script>
+	</main>
+</body>
+</html>

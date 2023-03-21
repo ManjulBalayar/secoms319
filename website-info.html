@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Products</title>
+  <!-- Load Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="navstyle.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Dictionary</a></li>
+            <li><a href="bestdictionary.html">Best Dictionaries</a></li>
+            <li><a href="website-info.html">Website Info</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+        </ul>
+    </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="card">
+          <img class="card-img-top" src="Step1.jpg">
+          <div class="card-body">
+            <h5 class="card-title" id="product4-name"></h5>
+            <p class="card-text" id="product4-description"></p>
+            <p class="card-text" id="product4-price"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card">
+          <img class="card-img-top" src="Step2.jpg">
+          <div class="card-body">
+            <h5 class="card-title" id="product5-name"></h5>
+            <p class="card-text" id="product5-description"></p>
+            <p class="card-text" id="product5-price"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card">
+          <img class="card-img-top" src="Step3.jpg">
+          <div class="card-body">
+            <h5 class="card-title" id="product6-name"></h5>
+            <p class="card-text" id="product6-description"></p>
+            <p class="card-text" id="product6-price"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Load jQuery and Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+  <script>
+    // Fetch the JSON data
+    fetch('data.json')
+      .then(response => response.json())
+      .then(data => {
+        // Get the products array from the JSON data
+        const products = data.products;
+        
+        // Update the HTML with the product data
+        document.getElementById('product4-name').textContent = products[3].productid;
+        document.getElementById('product4-description').textContent = products[3].description;
+        document.getElementById('product4-price').textContent = products[3].price;
+        
+        document.getElementById('product5-name').textContent = products[4].productid;
+        document.getElementById('product5-description').textContent = products[4].description;
+        document.getElementById('product5-price').textContent = products[4].price;
+        
+        document.getElementById('product6-name').textContent = products[5].productid;
+        document.getElementById('product6-description').textContent = products[5].description;
+        document.getElementById('product6-price').textContent = products[5].price;
+      })
+      .catch(error => console.error(error));
+  </script>
+</body>
+</html>
